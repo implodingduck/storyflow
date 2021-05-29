@@ -4,10 +4,22 @@ import dragon from './stories/dragon.json'
 
 import Story from './Story'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
-      <Story story={dragon.story}></Story>
+      <Router>
+        <Switch>
+          <Route path="/:flowhash?">
+            <Story story={dragon.story}></Story>
+          </Route>
+        </Switch>
+      </Router>
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

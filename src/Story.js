@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactMarkdown from 'react-markdown'
 import Flow from './Flow'
 import { flowhashToJson, jsonToFlowhash } from './helper'
+import {
+    useParams,
+    useHistory,
+    Link
+  } from "react-router-dom";
 
 function Story( {story} ) {
 
-    const [ flowhash, flowhashSetter] = React.useState("")
+    //const [ flowhash, flowhashSetter] = React.useState("")
+    let { flowhash = "" } = useParams()
+    let history = useHistory();
     const [ snippets, setSnippets] = React.useState("")
 
     const getNextKey = (flow, flowid, flowhashjson) => {
@@ -47,22 +54,37 @@ function Story( {story} ) {
              
         }
         console.log(newflashjson)
-        flowhashSetter(jsonToFlowhash(newflashjson))
+        //flowhashSetter(jsonToFlowhash(newflashjson))
+        history.push('/'+jsonToFlowhash(newflashjson))
         setSnippets(newSnippets)
     }   
+
+    useEffect(() => {
+        let newSnippets = ""
+        const flowhashjson = flowhashToJson(flowhash)
+        for ( let k of Object.keys(flowhashjson)){
+            newSnippets += story.flow[k].paths[flowhashjson[k]].snippet + " "
+        }
+        setSnippets(newSnippets)
+    }, [flowhash, story, setSnippets]);
 
     return (
         <div>
             <h1>Hello, it is time for a story <span style={ { display: "none" }}>{flowhash}</span></h1>
-        <div className="flowcontainer">
-            <Flow flow={story.flow} flowid={story.start} flowhash={flowhash} setFlowhash={setFlowhash}></Flow>
-        </div>
-        <div className="markdowncontainer">
-            <ReactMarkdown children={snippets} />
-        </div>
-        <pre style={ { "display": "none" } }>
-            {JSON.stringify(story, null, 2)}
-        </pre>
+            <div className="flowcontainer">
+                <Flow flow={story.flow} flowid={story.start} flowhash={flowhash} setFlowhash={setFlowhash}></Flow>
+            </div>
+            <div className="markdowncontainer">
+                <ReactMarkdown children={snippets} />
+            </div>
+            <pre style={ { "display": "none" } }>
+                {JSON.stringify(story, null, 2)}
+            </pre>
+            { ( flowhash !== "") ?
+            <div className="sharestory">
+                Share your story: <Link to={ flowhash}>{window.location.href}</Link>
+            </div>
+            : ""}
         </div>
     )
 }

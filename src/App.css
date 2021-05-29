@@ -49,3 +49,10 @@
 .flow li {
   list-style-type: none;
 }
+
+.sharestory {
+  clear: both;
+  width: 100%;
+  text-align: center;
+  padding-top: 2em;
+}
