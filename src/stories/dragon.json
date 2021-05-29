@@ -56,17 +56,17 @@
                     {
                         "text": "Red",
                         "next": "4",
-                        "snippet": "The dragon was a lovely shade of red."
+                        "snippet": "The dragon was a lovely shade of red,"
                     },
                     {
                         "text": "Green",
                         "next": "4",
-                        "snippet": "The dragon was a lovely shade of green."
+                        "snippet": "The dragon was a lovely shade of green,"
                     },
                     {
                         "text": "Blue",
                         "next": "4",
-                        "snippet": "The dragon was a lovely shade of blue."
+                        "snippet": "The dragon was a lovely shade of blue,"
                     }
                 ]
             },
@@ -75,23 +75,23 @@
                 "paths": [
                     {
                         "text": "The Ocean",
-                        "snippet": "Who wanted to visit the Ocean.\n\n"
+                        "snippet": "and wanted to visit the Ocean.\n\n"
                     },
                     {
                         "text": "The Forest",
-                        "snippet": "Who wanted to visit the Forest.\n\n"
+                        "snippet": "and wanted to visit the Forest.\n\n"
                     },
                     {
                         "text": "The Mountains",
-                        "snippet": "Who wanted to visit the Mountains.\n\n"
+                        "snippet": "and wanted to visit the Mountains.\n\n"
                     },
                     {
                         "text": "The Plains",
-                        "snippet": "Who wanted to visit the Plains.\n\n"
+                        "snippet": "and wanted to visit the Plains.\n\n"
                     },
                     {
                         "text": "The Swamp",
-                        "snippet": "Who wanted to visit the Swamp.\n\n"
+                        "snippet": "and wanted to visit the Swamp.\n\n"
                     }
                 ]
             }
