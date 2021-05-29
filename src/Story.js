@@ -53,7 +53,7 @@ function Story( {story} ) {
 
     return (
         <div>
-            <h1>Hello, it is time for a story {flowhash}</h1>
+            <h1>Hello, it is time for a story <span style={ { display: "none" }}>{flowhash}</span></h1>
         <div className="flowcontainer">
             <Flow flow={story.flow} flowid={story.start} flowhash={flowhash} setFlowhash={setFlowhash}></Flow>
         </div>
