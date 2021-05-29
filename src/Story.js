@@ -52,10 +52,14 @@ function Story( {story} ) {
     }   
 
     return (
-        <div>Hello, it is time for a story {flowhash}
-
-        <Flow flow={story.flow} flowid={story.start} flowhash={flowhash} setFlowhash={setFlowhash}></Flow>
-        <ReactMarkdown children={snippets} />
+        <div>
+            <h1>Hello, it is time for a story {flowhash}</h1>
+        <div className="flowcontainer">
+            <Flow flow={story.flow} flowid={story.start} flowhash={flowhash} setFlowhash={setFlowhash}></Flow>
+        </div>
+        <div className="markdowncontainer">
+            <ReactMarkdown children={snippets} />
+        </div>
         <pre style={ { "display": "none" } }>
             {JSON.stringify(story, null, 2)}
         </pre>

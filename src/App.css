@@ -37,7 +37,19 @@
   }
 }
 
-
+.flowcontainer {
+  width: 47%;
+  padding: 1%;
+  float: left;
+  border-right: 1px solid #333333;
+}
+.markdowncontainer{
+  width: 47%;
+  padding: 1%;
+  margin-left: -1px;
+  float: left;
+  border-left: 1px solid #333333;
+}
 .flow li {
   list-style-type: none;
 }
