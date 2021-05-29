@@ -1,0 +1,101 @@
+{
+    "story": {
+        "name": "Dragon Story",
+        "version": "1.0.0",
+        "start": "0",
+        "flow": {
+            "0": {
+                "text": "Which region does your dragon come from?",
+                "paths": [
+                    {
+                        "text": "Eastern",
+                        "next": "1",
+                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Eastern region"
+                    },
+                    {
+                        "text": "Western",
+                        "next": "2",
+                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Western region"
+                    }
+                ]
+                
+            },
+            "1": {
+                "text": "Does your dragon have wings?",
+                "paths": [
+                    {
+                        "text": "Yes",
+                        "next": "3",
+                        "snippet": "who flew with its wings."
+                    },
+                    {
+                        "text": "No",
+                        "next": "3",
+                        "snippet": "who flew without wings."
+                    }
+                ]
+            },
+            "2": {
+                "text": "Is your dragon Bipedal or Quadpedal?",
+                "paths": [
+                    {
+                        "text": "Bipedal",
+                        "next": "3",
+                        "snippet": "with 2 feet and wings for arms."
+                    },
+                    {
+                        "text": "Quadpedal",
+                        "next": "3",
+                        "snippet": "with 2 arms, 2 feet and wings."
+                    }
+                ] 
+            },
+            "3": {
+                "text": "What color is your dragon?",
+                "paths": [
+                    {
+                        "text": "Red",
+                        "next": "4",
+                        "snippet": "The dragon was a lovely shade of red."
+                    },
+                    {
+                        "text": "Green",
+                        "next": "4",
+                        "snippet": "The dragon was a lovely shade of green."
+                    },
+                    {
+                        "text": "Blue",
+                        "next": "4",
+                        "snippet": "The dragon was a lovely shade of blue."
+                    }
+                ]
+            },
+            "4": {
+                "text": "Where does your dragon want to visit?",
+                "paths": [
+                    {
+                        "text": "The Ocean",
+                        "snippet": "Who wanted to visit the Ocean.\n\n"
+                    },
+                    {
+                        "text": "The Forest",
+                        "snippet": "Who wanted to visit the Forest.\n\n"
+                    },
+                    {
+                        "text": "The Mountains",
+                        "snippet": "Who wanted to visit the Mountains.\n\n"
+                    },
+                    {
+                        "text": "The Plains",
+                        "snippet": "Who wanted to visit the Plains.\n\n"
+                    },
+                    {
+                        "text": "The Swamp",
+                        "snippet": "Who wanted to visit the Swamp.\n\n"
+                    }
+                ]
+            }
+        }
+
+    }
+}
