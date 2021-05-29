@@ -1,7 +1,3 @@
-.App {
-  /*t ext-align: center; */
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,7 +44,7 @@
   padding: 1%;
   margin-left: -1px;
   float: left;
-  border-left: 1px solid #333333;
+
 }
 .flow li {
   list-style-type: none;
