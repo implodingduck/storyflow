@@ -5,7 +5,7 @@
         "start": "0",
         "flow": {
             "0": {
-                "text": "Which region does your [dragon](https://www.google.com/search?q=dragon){:target=\"_blank\"} come from?",
+                "text": "Which region does your [dragon](https://www.google.com/search?q=dragon) come from?",
                 "paths": [
                     {
                         "text": "Eastern",
