@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/storyflow/static/css/main.4610ae90.chunk.css",
-    "main.js": "/storyflow/static/js/main.72a0051e.chunk.js",
-    "main.js.map": "/storyflow/static/js/main.72a0051e.chunk.js.map",
+    "main.js": "/storyflow/static/js/main.bfda0b50.chunk.js",
+    "main.js.map": "/storyflow/static/js/main.bfda0b50.chunk.js.map",
     "runtime-main.js": "/storyflow/static/js/runtime-main.29be1f01.js",
     "runtime-main.js.map": "/storyflow/static/js/runtime-main.29be1f01.js.map",
     "static/js/2.1a67c26f.chunk.js": "/storyflow/static/js/2.1a67c26f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.29be1f01.js",
     "static/js/2.1a67c26f.chunk.js",
     "static/css/main.4610ae90.chunk.css",
-    "static/js/main.72a0051e.chunk.js"
+    "static/js/main.bfda0b50.chunk.js"
   ]
 }
