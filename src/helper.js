@@ -33,7 +33,10 @@ export function flowhashToJson(flowhash){
 export function jsonToFlowhash(flowhashjson){
     let flowhash = ""
     Object.keys(flowhashjson).forEach( (key) => {
-        flowhash += toBase36(key)
+        console.log('Before: ' + key)
+        let base36key = toBase36(parseInt(key))
+        console.log('After: ' + base36key)
+        flowhash += base36key
         flowhash += toBase36(flowhashjson[key])
     })
     return flowhash

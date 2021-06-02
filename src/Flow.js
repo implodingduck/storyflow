@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown'
 import { flowhashToJson } from './helper'
 
 function Flow( {flow, flowid, flowhash, setFlowhash} ) {
@@ -17,11 +18,11 @@ function Flow( {flow, flowid, flowhash, setFlowhash} ) {
 
     return (
         <div className="flow">
-        <p>{flow[flowid].text}</p>
+        <ReactMarkdown children={flow[flowid].text} />
         <ul>
             { flow[flowid].paths.map((path, i) => {
                 // eslint-disable-next-line
-                return <li key={i}><label><input type="radio" name={flowid} value={i} onChange={handlePathSelectChange} checked={ pathSelection === String(i) } /> {path.text}</label></li>
+                return <li key={i}><label><input type="radio" name={flowid} value={i} onChange={handlePathSelectChange} checked={ pathSelection === String(i) } /> <ReactMarkdown children={path.text} /></label></li>
             })}
         </ul>
         

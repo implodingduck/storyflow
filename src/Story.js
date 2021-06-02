@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useCallback} from 'react';
 import ReactMarkdown from 'react-markdown'
 import Flow from './Flow'
 import { flowhashToJson, jsonToFlowhash } from './helper'
@@ -18,7 +18,7 @@ function Story( {story} ) {
     const getNextKey = (flow, flowid, flowhashjson) => {
         return (flow[flowid].paths[flowhashjson[flowid]] && flow[flowid].paths[flowhashjson[flowid]].next) ? flow[flowid].paths[flowhashjson[flowid]].next : -1
     }
-    const getValidKeys = (flow, flowid, flowhashjson) => {
+    const getValidKeys = useCallback((flow, flowid, flowhashjson) => {
         const validkeys = []
         validkeys.push(flowid)
         let nextkey = getNextKey(flow,flowid, flowhashjson)
@@ -32,7 +32,7 @@ function Story( {story} ) {
 
         return validkeys
         
-    }
+    }, [])
 
     const setFlowhash = (flowid, pathSelection) => {
         const flowhashjson = flowhashToJson(flowhash)
@@ -49,7 +49,7 @@ function Story( {story} ) {
             console.log(typeof vk)
             if (flowhashjson[vk]) {
                 newflashjson[vk] = flowhashjson[vk]
-                newSnippets += story.flow[vk].paths[newflashjson[vk]].snippet + " "
+                //newSnippets += story.flow[vk].paths[newflashjson[vk]].snippet + " "
             }
              
         }
@@ -62,11 +62,19 @@ function Story( {story} ) {
     useEffect(() => {
         let newSnippets = ""
         const flowhashjson = flowhashToJson(flowhash)
-        for ( let k of Object.keys(flowhashjson)){
-            newSnippets += story.flow[k].paths[flowhashjson[k]].snippet + " "
+        const validkeys = getValidKeys(story.flow, story.start, flowhashjson)
+       
+        for ( let k of validkeys){
+            console.log('snippet')
+            console.log(k)
+            if (flowhashjson[k]){
+                newSnippets += story.flow[k].paths[flowhashjson[k]].snippet + " "
+            }
+            
         }
+
         setSnippets(newSnippets)
-    }, [flowhash, story, setSnippets]);
+    }, [flowhash, story, getValidKeys, setSnippets]);
 
     return (
         <div>

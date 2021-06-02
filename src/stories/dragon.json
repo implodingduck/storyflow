@@ -5,22 +5,22 @@
         "start": "0",
         "flow": {
             "0": {
-                "text": "Which region does your dragon come from?",
+                "text": "Which region does your [dragon](https://www.google.com/search?q=dragon){:target=\"_blank\"} come from?",
                 "paths": [
                     {
                         "text": "Eastern",
-                        "next": "1",
+                        "next": "10",
                         "snippet": "# A Dragon Story...\nThere once was a dragon from the Eastern region"
                     },
                     {
                         "text": "Western",
-                        "next": "2",
+                        "next": "20",
                         "snippet": "# A Dragon Story...\nThere once was a dragon from the Western region"
                     }
                 ]
                 
             },
-            "1": {
+            "10": {
                 "text": "Does your dragon have wings?",
                 "paths": [
                     {
@@ -35,7 +35,7 @@
                     }
                 ]
             },
-            "2": {
+            "20": {
                 "text": "Is your dragon Bipedal or Quadpedal?",
                 "paths": [
                     {
