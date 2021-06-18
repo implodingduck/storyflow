@@ -3,6 +3,7 @@ import './App.css';
 import dragon from './stories/dragon.json'
 
 import Story from './Story'
+import Editor from './Editor'
 
 import {
   HashRouter as Router,
@@ -15,6 +16,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/editor">
+            <Editor ></Editor>
+          </Route>
           <Route path="/:flowhash?">
             <Story story={dragon.story}></Story>
           </Route>
