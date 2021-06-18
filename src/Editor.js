@@ -24,6 +24,7 @@ function Editor( ) {
             if (parseInt(flowKey) >= nextId){
                 nextId = parseInt(flowKey) + 1
             }
+            return ""
         })
         return nextId + ""
     }
