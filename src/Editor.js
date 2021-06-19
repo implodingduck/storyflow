@@ -3,7 +3,7 @@ import EditFlow from './EditFlow'
 import dragon from './stories/dragon.json'
 
 function Editor( ) {
-    const [ story, setStory] = React.useState(dragon)
+    const [ story, setStory] = React.useState( (localStorage.getItem('editorstory')) ? JSON.parse(localStorage.getItem('editorstory')) : dragon )
 
     const handleTitle = (e) => {
         console.log("handleTitle: " + e.target.value)
@@ -11,6 +11,11 @@ function Editor( ) {
         updatedStory.story.name = e.target.value
         setStory(updatedStory)
     }
+
+    React.useEffect( () => {
+        localStorage.setItem('editorstory', JSON.stringify(story));
+    }, [story])
+
     const getNextId = (storyflow) => {
         let nextId = 0
         Object.keys(storyflow).map((flowKey) => {
@@ -38,6 +43,10 @@ function Editor( ) {
         setStory(updatedStory)
     }
 
+    const clearLocalStorage = () => {
+        localStorage.clear()
+    }
+
     return (
         <div>
             <h3>Editor</h3>
@@ -53,6 +62,7 @@ function Editor( ) {
                     {JSON.stringify(story, null, 2)}
                 </pre>
             </div>
+            <button onClick={clearLocalStorage}>Clear Local Storage</button>
         </div>
     )
 }

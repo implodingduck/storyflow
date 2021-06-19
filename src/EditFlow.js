@@ -26,6 +26,16 @@ function EditFlow( {flowid, flow, story, setStory} ) {
         updatedStory.story.flow[flowid].paths[index].snippet = e.target.value
         setStory(updatedStory)
     }
+    const handlePathLinks = (e, index) => {
+        const updatedStory = JSON.parse(JSON.stringify(story));
+        updatedStory.story.flow[flowid].paths[index].links = e.target.value
+        setStory(updatedStory)
+    }
+    const handlePathKnown = (e, index) => {
+        const updatedStory = JSON.parse(JSON.stringify(story));
+        updatedStory.story.flow[flowid].paths[index].known = e.target.value
+        setStory(updatedStory)
+    }
     const addPath = () => {
         const updatedStory = JSON.parse(JSON.stringify(story));
         updatedStory.story.flow[flowid].paths.push(
@@ -55,7 +65,9 @@ function EditFlow( {flowid, flow, story, setStory} ) {
                             })
                         }
                     </select></label>
-                    <lable>Snippet: <textarea onChange={(e) => handlePathSnippet(e, i)} defaultValue={path.snippet}></textarea></lable>
+                    <label>Snippet: <textarea onChange={(e) => handlePathSnippet(e, i)} defaultValue={path.snippet}></textarea></label>
+                    <label>Relevant Links: <textarea onChange={(e) => handlePathLinks(e, i)} defaultValue={path.links}></textarea></label>
+                    <label>What We Know: <textarea onChange={(e) => handlePathKnown(e, i)} defaultValue={path.known}></textarea></label>
                 </fieldset>)
             })}
             <button onClick={addPath}>Add Path</button>
