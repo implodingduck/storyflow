@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/storyflow/static/css/main.4610ae90.chunk.css",
-    "main.js": "/storyflow/static/js/main.bfda0b50.chunk.js",
-    "main.js.map": "/storyflow/static/js/main.bfda0b50.chunk.js.map",
+    "main.css": "/storyflow/static/css/main.664097c2.chunk.css",
+    "main.js": "/storyflow/static/js/main.50ef9873.chunk.js",
+    "main.js.map": "/storyflow/static/js/main.50ef9873.chunk.js.map",
     "runtime-main.js": "/storyflow/static/js/runtime-main.29be1f01.js",
     "runtime-main.js.map": "/storyflow/static/js/runtime-main.29be1f01.js.map",
-    "static/js/2.1a67c26f.chunk.js": "/storyflow/static/js/2.1a67c26f.chunk.js",
-    "static/js/2.1a67c26f.chunk.js.map": "/storyflow/static/js/2.1a67c26f.chunk.js.map",
+    "static/js/2.61492219.chunk.js": "/storyflow/static/js/2.61492219.chunk.js",
+    "static/js/2.61492219.chunk.js.map": "/storyflow/static/js/2.61492219.chunk.js.map",
     "static/js/3.9ceebfa8.chunk.js": "/storyflow/static/js/3.9ceebfa8.chunk.js",
     "static/js/3.9ceebfa8.chunk.js.map": "/storyflow/static/js/3.9ceebfa8.chunk.js.map",
     "index.html": "/storyflow/index.html",
-    "static/css/main.4610ae90.chunk.css.map": "/storyflow/static/css/main.4610ae90.chunk.css.map",
-    "static/js/2.1a67c26f.chunk.js.LICENSE.txt": "/storyflow/static/js/2.1a67c26f.chunk.js.LICENSE.txt"
+    "static/css/main.664097c2.chunk.css.map": "/storyflow/static/css/main.664097c2.chunk.css.map",
+    "static/js/2.61492219.chunk.js.LICENSE.txt": "/storyflow/static/js/2.61492219.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.29be1f01.js",
-    "static/js/2.1a67c26f.chunk.js",
-    "static/css/main.4610ae90.chunk.css",
-    "static/js/main.bfda0b50.chunk.js"
+    "static/js/2.61492219.chunk.js",
+    "static/css/main.664097c2.chunk.css",
+    "static/js/main.50ef9873.chunk.js"
   ]
 }
