@@ -36,6 +36,16 @@ function EditFlow( {flowid, flow, story, setStory} ) {
         updatedStory.story.flow[flowid].paths[index].known = e.target.value
         setStory(updatedStory)
     }
+    const handlePathDelete = (e, index) => {
+        const updatedStory = JSON.parse(JSON.stringify(story));
+        updatedStory.story.flow[flowid].paths.splice(index,1)
+        setStory(updatedStory)
+    }
+    const handleDeleteFlow = () => {
+        const updatedStory = JSON.parse(JSON.stringify(story));
+        delete updatedStory.story.flow[flowid]
+        setStory(updatedStory)
+    }
     const addPath = () => {
         const updatedStory = JSON.parse(JSON.stringify(story));
         updatedStory.story.flow[flowid].paths.push(
@@ -50,12 +60,13 @@ function EditFlow( {flowid, flow, story, setStory} ) {
     return (
         <div>
             <fieldset><legend>{flowid}</legend>
-            
+            <button onClick={handleDeleteFlow}>Delete Flow</button>
             <label>Text: <input type="text" onChange={handleFlowText} value={flow.text} /></label>
             <button onClick={toggleDisplayFlow} style={ {float: "right"} }>{ (displayFlow) ? "Hide" : "Show"}</button>
             <div style={ { "display": (displayFlow) ? "block" : "none" }}>Paths:
             {flow.paths.map((path, i) => {
                 return (<fieldset key={i}><legend>{i}</legend>
+                    <button onClick={(e) => handlePathDelete(e, i)}>Delete Path</button>
                     <label>Text: <input type="text" onChange={(e) => handlePathText(e, i)} value={path.text} /></label>
                     <label>Next: <select onChange={(e) => handlePathNext(e, i)}>
                         <option>[End]</option>
