@@ -10,12 +10,17 @@
                     {
                         "text": "Eastern",
                         "next": "10",
-                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Eastern region"
+                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Eastern region",
+                        "known": "This dragon is from the East",
+                        "links": "* [Dragon](https://www.google.com/search?q=dragon)\n* [Eastern](https://www.google.com/search?q=eastern)"
+                        
                     },
                     {
                         "text": "Western",
                         "next": "20",
-                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Western region"
+                        "snippet": "# A Dragon Story...\nThere once was a dragon from the Western region",
+                        "known": "This dragon is from the West",
+                        "links": "* [Dragon](https://www.google.com/search?q=dragon)\n* [Western](https://www.google.com/search?q=western)"
                     }
                 ]
                 

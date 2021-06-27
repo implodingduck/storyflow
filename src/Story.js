@@ -14,6 +14,8 @@ function Story( {story} ) {
     let { flowhash = "" } = useParams()
     let history = useHistory();
     const [ snippets, setSnippets] = React.useState("")
+    const [ links, setLinks] = React.useState("")
+    const [ known, setKnown] = React.useState("")
 
     const getNextKey = (flow, flowid, flowhashjson) => {
         return (flow[flowid].paths[flowhashjson[flowid]] && flow[flowid].paths[flowhashjson[flowid]].next) ? flow[flowid].paths[flowhashjson[flowid]].next : -1
@@ -36,7 +38,7 @@ function Story( {story} ) {
 
     const setFlowhash = (flowid, pathSelection) => {
         const flowhashjson = flowhashToJson(flowhash)
-        let newSnippets = ""
+        //let newSnippets = ""
         flowhashjson[flowid] = pathSelection
         console.log(typeof flowid)
         //TODO get a list of valid indexes
@@ -56,11 +58,13 @@ function Story( {story} ) {
         console.log(newflashjson)
         //flowhashSetter(jsonToFlowhash(newflashjson))
         history.push('/'+jsonToFlowhash(newflashjson))
-        setSnippets(newSnippets)
+        //setSnippets(newSnippets)
     }   
 
     useEffect(() => {
         let newSnippets = ""
+        let newKnown = ""
+        let newLinks = ""
         const flowhashjson = flowhashToJson(flowhash)
         const validkeys = getValidKeys(story.flow, story.start, flowhashjson)
        
@@ -68,13 +72,17 @@ function Story( {story} ) {
             console.log('snippet')
             console.log(k)
             if (flowhashjson[k]){
-                newSnippets += story.flow[k].paths[flowhashjson[k]].snippet + " "
+                newSnippets += (story.flow[k].paths[flowhashjson[k]].snippet) ? story.flow[k].paths[flowhashjson[k]].snippet + " " : ""
+                newKnown += (story.flow[k].paths[flowhashjson[k]].known) ? story.flow[k].paths[flowhashjson[k]].known + " " : ""
+                newLinks += (story.flow[k].paths[flowhashjson[k]].links) ? story.flow[k].paths[flowhashjson[k]].links + " " : ""
             }
             
         }
 
         setSnippets(newSnippets)
-    }, [flowhash, story, getValidKeys, setSnippets]);
+        setKnown(newKnown)
+        setLinks(newLinks)
+    }, [flowhash, story, getValidKeys, setSnippets, setKnown, setLinks]);
 
     return (
         <div>
@@ -84,6 +92,10 @@ function Story( {story} ) {
             </div>
             <div className="markdowncontainer">
                 <ReactMarkdown children={snippets} />
+                { (known.length > 0) ? <h2>What is Known:</h2> : "" }
+                <ReactMarkdown children={known} />
+                { (links.length > 0) ? <h2>Relevant Links:</h2> : "" }
+                <ReactMarkdown children={links} />
             </div>
             <pre style={ { "display": "none" } }>
                 {JSON.stringify(story, null, 2)}
